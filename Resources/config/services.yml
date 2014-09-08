@@ -1,4 +1,4 @@
 services:
     socialnetwork.model:
-            class:        BiberLtd\Core\Bundles\SocialNetworkBundle\Services\SocialNetworkModel
+            class:        BiberLtd\Bundle\SocialNetworkBundle\Services\SocialNetworkModel
             arguments:    [@kernel, "default", "doctrine"]

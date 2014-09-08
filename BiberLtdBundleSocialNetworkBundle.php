@@ -1,11 +1,11 @@
 <?php
 
-namespace BiberLtd\Core\Bundles\SocialNetworkBundle;
+namespace BiberLtd\Bundle\SocialNetworkBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class BiberLtdCoreBundlesSocialNetworkBundle extends Bundle
+class BiberLtdBundleSocialNetworkBundle extends Bundle
 {
 
 }

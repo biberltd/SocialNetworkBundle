@@ -29,7 +29,7 @@
     </association>
     <comment caption="SocialNetworkBundle Pricing" description="social_network: 125 TL&#10;&#10;toplam: 125 TL" uuid="ea4b898a-b608-4960-9e8d-cddc3bddeecb"/>
     <orm-attributes>
-      <attribute name="namespace">BiberLtd\Core\Bundles\SocialNetworkBundle\Entity</attribute>
+      <attribute name="namespace">BiberLtd\Bundle\SocialNetworkBundle\Entity</attribute>
       <attribute name="filename-format">entity-name-only</attribute>
       <attribute name="file-suffix">without-suffix</attribute>
     </orm-attributes>

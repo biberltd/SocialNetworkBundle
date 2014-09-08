@@ -19,7 +19,7 @@
  *
  */
 
-namespace BiberLtd\Core\Bundles\SocialNetworkBundle\Controller;
+namespace BiberLtd\Bundle\SocialNetworkBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller,
     Symfony\Component\HttpKernel\Exception,
