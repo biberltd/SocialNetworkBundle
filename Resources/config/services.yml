@@ -1,0 +1,7 @@
+parameters:
+#    biber_ltd_social_network.example.class: BiberLtd\Bundle\SocialNetworkBundle\Example
+
+services:
+#    biber_ltd_social_network.example:
+#        class: %biber_ltd_social_network.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<skipper version="3.0.0.1104" mvc="Symfony2" orm="Doctrine2">
+  <module name="SocialNetworkBundle" import-format="Doctrine2Php" import-path="../Entity" uuid="4d63e71f-6ea3-4502-a5a5-c8a28e0d465a">
+    <entity name="SocialNetwork" description="Holds a list of available social network definitions for eachregistered  web site." uuid="48c4951b-9c99-4325-ae88-adffbfbb2276">
+      <field name="id" description="System given id." type="integer" size="10" required="true" unique="true" primary="true" auto-increment="true" uuid="9cec5401-fe64-4997-a45a-fd5ab0b31898"/>
+      <field name="name" description="Name of social network." type="string" size="45" required="true" uuid="3d1b8dac-48cf-4107-869a-2a8aa5d23e9d"/>
+      <field name="url_key" description="Url key of social network." type="string" size="155" required="true" uuid="a6fcead8-db9b-4d65-858e-e7d2b4685f0b"/>
+      <field name="url" description="URL of the social network page." type="text" uuid="22d646d7-44be-471d-9d5c-12e38ca16cf3"/>
+      <field name="site" description="Site that social network is defined for." type="integer" size="10" uuid="6dadcd9a-bd31-4628-aa83-3dc217f3b5c1"/>
+      <index name="idx_u_social_network_id" unique="true">
+        <index-field name="id"/>
+      </index>
+      <index name="idx_u_social_network_url_key" unique="true">
+        <index-field name="url_key"/>
+        <index-field name="site"/>
+      </index>
+      <orm-attributes>
+        <attribute name="options">
+          <attribute name="charset">utf8</attribute>
+          <attribute name="collate">utf8_turkish_ci</attribute>
+          <attribute name="engine">innodb</attribute>
+        </attribute>
+        <attribute name="table">social_network</attribute>
+        <attribute name="export-file-name">SocialNetwork.php</attribute>
+      </orm-attributes>
+    </entity>
+    <association from="SocialNetwork" to="Site" caption="idx_f_social_network_site" inverse-alias="site" uuid="1559e8fc-0463-43dc-aa06-d3ea1e3a8178">
+      <association-field from="site" to="id"/>
+    </association>
+    <comment caption="SocialNetworkBundle Pricing" description="social_network: 125 TL&#10;&#10;toplam: 125 TL" uuid="ea4b898a-b608-4960-9e8d-cddc3bddeecb"/>
+    <orm-attributes>
+      <attribute name="namespace">BiberLtd\Core\Bundles\SocialNetworkBundle\Entity</attribute>
+      <attribute name="filename-format">entity-name-only</attribute>
+      <attribute name="file-suffix">without-suffix</attribute>
+    </orm-attributes>
+  </module>
+  <visual-data>
+    <entity uuid="48c4951b-9c99-4325-ae88-adffbfbb2276" bg-color="4294967295" hdr-color="4292006610" position-x="182" position-y="99" size-x="0" size-x2="109" size-y="0" size-y2="87"/>
+    <module uuid="4d63e71f-6ea3-4502-a5a5-c8a28e0d465a" bg-color="4287072255" size-x="0" size-x2="305" size-y="0" size-y2="299"/>
+    <comment uuid="ea4b898a-b608-4960-9e8d-cddc3bddeecb" bg-color="4294948765" position-x="1" position-y="17" size-x="0" size-x2="142" size-y="0" size-y2="56" txt-color="4278190080"/>
+  </visual-data>
+</skipper>
