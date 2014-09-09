@@ -1,3 +1,9 @@
-biber_ltd_social_network_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: BiberLtdSocialNetworkBundle:Default:index }
+biberltd_core_social_network_manage:
+    pattern:  social_networks/{sortcolumn}/{sortorder}/{social_network_number}
+    defaults: { _controller: BiberLtdCoreBundlesContentManagementBundle:Manage:socialNetworkList }
+    pattern:  social_networks/edit/{socialNetwork_id_or_code}
+    defaults: { _controller: BiberLtdCoreBundlesContentManagementBundle:Manage:socialNetworkEdit }
+    pattern:  social_networks/new
+    defaults: { _controller: BiberLtdCoreBundlesContentManagementBundle:Manage:socialNetworkNew }
+    pattern:  social_networks/delete
+    defaults: { _controller: BiberLtdCoreBundlesContentManagementBundle:Manage:socialNetworkDelete }
