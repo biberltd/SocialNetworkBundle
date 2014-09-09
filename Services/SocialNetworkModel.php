@@ -38,21 +38,21 @@
  * TODOs:
  * Do not forget to implement SITE, ORDER, AND PAGINATION RELATED FUNCTIONALITY
  */
-namespace BiberLtd\Core\Bundles\SocialNetworkBundle\Services;
+namespace BiberLtd\Bundle\SocialNetworkBundle\Services;
 
 /** Extends CoreModel */
-use BiberLtd\Core\CoreModel;
+use BiberLtd\Bundle\CoreBundle\CoreModel;
 
 /** Entities to be used */
-use BiberLtd\Core\Bundles\SocialNetworkBundle\Entity as BundleEntity;
-use BiberLtd\Core\Bundles\SiteManagementBundle\Entity as SMEntity;
+use BiberLtd\Bundle\SocialNetworkBundle\Entity as BundleEntity;
+use BiberLtd\Bundle\SiteManagementBundle\Entity as SMEntity;
 
 /** Helper Models */
-use BiberLtd\Core\Bundles\SiteManagementBundle\Services as SMService;
+use BiberLtd\Bundle\SiteManagementBundle\Services as SMService;
 
 /** Core Service*/
-use BiberLtd\Core\Services as CoreServices;
-use BiberLtd\Core\Exceptions as CoreExceptions;
+use BiberLtd\Bundle\CoreBundle\Services as CoreServices;
+use BiberLtd\Bundle\CoreBundle\Exceptions as CoreExceptions;
 
 class SocialNetworkModel extends CoreModel {
     /**
