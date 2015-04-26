@@ -3,15 +3,14 @@
  * @name        ShoppingOrderStatusLocalization
  * @package		BiberLtd\Bundle\CoreBundle\ShoppingCartBundle
  *
+ * @author		Can Berkol
  * @author		Murat Ünal
  *
- * @version     1.0.0
- * @date        23.09.2013
+ * @version     1.0.1
+ * @date        26.04.2015
  *
  * @copyright   Biber Ltd. (http://www.biberltd.com)
  * @license     GPL v3.0
- *
- * @description Model / Entity class.
  *
  */
 namespace BiberLtd\Bundle\SocialNetworkBundle\Entity;
@@ -51,6 +50,16 @@ class SocialNetwork extends CoreEntity
      * @ORM\Column(type="text", nullable=true)
      */
     private $url;
+
+	/**
+	 * @ORM\Column(type="string", length=155, nullable=true)
+	 */
+	private $icon;
+
+	/**
+	 * @ORM\Column(type="string", unique=true, length=255, nullable=true)
+	 */
+	private $code;
 
     /** 
      * @ORM\ManyToOne(targetEntity="BiberLtd\Bundle\SiteManagementBundle\Entity\Site")
@@ -230,9 +239,88 @@ class SocialNetwork extends CoreEntity
     public function getUrlKey() {
         return $this->url_key;
     }
+	/**
+	 * @name        getCode ()
+	 *
+	 * @author      Can Berkol
+	 *
+	 * @since       1.0.0
+	 * @version     1.0.0
+	 *
+	 * @return      mixed
+	 */
+	public function getCode() {
+		return $this->code;
+	}
+
+	/**
+	 * @name              setCode ()
+	 *
+	 * @author      Can Berkol
+	 *
+	 * @since       1.0.0
+	 * @version     1.0.0
+	 *
+	 * @param       mixed $code
+	 *
+	 * @return      $this
+	 */
+	public function setCode($code) {
+		if (!$this->setModified('code', $code)->isModified()) {
+			return $this;
+		}
+		$this->code = $code;
+
+		return $this;
+	}
+
+	/**
+	 * @name        getIcon ()
+	 *
+	 * @author      Can Berkol
+	 *
+	 * @since       1.0.0
+	 * @version     1.0.0
+	 *
+	 * @return      mixed
+	 */
+	public function getIcon() {
+		return $this->icon;
+	}
+
+	/**
+	 * @name              setIcon ()
+	 *
+	 * @author      Can Berkol
+	 *
+	 * @since       1.0.0
+	 * @version     1.0.0
+	 *
+	 * @param       mixed $icon
+	 *
+	 * @return      $this
+	 */
+	public function setIcon($icon) {
+		if (!$this->setModified('icon', $icon)->isModified()) {
+			return $this;
+		}
+		$this->icon = $icon;
+
+		return $this;
+	}
 }
 /**
  * Change Log:
+ * **************************************
+ * v1.0.1					   26.04.2015
+ * TW #3569382
+ * Can Berkol
+ * **************************************
+ * A getIcon
+ * A getCode
+ * A setCode
+ * A setIcon
+ *
  * **************************************
  * v1.0.0                      Murat Ünal
  * 23.09.2013
