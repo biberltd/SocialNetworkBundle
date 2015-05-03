@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2015-04-27 15:42:08
+Date: 2015-05-03 16:18:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,7 +33,3 @@ CREATE TABLE `social_network` (
   KEY `idxFSiteOfSocialNetwork` (`site`) USING BTREE,
   CONSTRAINT `idxFSiteOfSocialNetwork` FOREIGN KEY (`site`) REFERENCES `site` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci ROW_FORMAT=COMPACT;
-
--- ----------------------------
--- Records of social_network
--- ----------------------------

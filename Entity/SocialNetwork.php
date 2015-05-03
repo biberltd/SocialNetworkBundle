@@ -6,8 +6,8 @@
  * @author		Can Berkol
  * @author		Murat Ünal
  *
- * @version     1.0.1
- * @date        26.04.2015
+ * @version     1.0.2
+ * @date        03.05.2015
  *
  * @copyright   Biber Ltd. (http://www.biberltd.com)
  * @license     GPL v3.0
@@ -16,40 +16,40 @@
 namespace BiberLtd\Bundle\SocialNetworkBundle\Entity;
 use Doctrine\ORM\Mapping AS ORM;
 use BiberLtd\Bundle\CoreBundle\CoreEntity;
-/** 
+/**
  * @ORM\Entity
  * @ORM\Table(
  *     name="social_network",
  *     options={"charset":"utf8","collate":"utf8_turkish_ci","engine":"innodb"},
  *     uniqueConstraints={
- *         @ORM\UniqueConstraint(name="idx_u_social_network_id", columns={"id"}),
- *         @ORM\UniqueConstraint(name="idx_u_social_network_url_key", columns={"url_key","site"})
+ *         @ORM\UniqueConstraint(name="idxUSocialNetworkId", columns={"id"}),
+ *         @ORM\UniqueConstraint(name="idxUSocialNetworkUrlKey", columns={"url_key","site"})
  *     }
  * )
  */
 class SocialNetwork extends CoreEntity
 {
-    /** 
-     * @ORM\Id
-     * @ORM\Column(type="integer", length=10)
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
+    /**
+	 * @ORM\Id
+	 * @ORM\Column(type="integer", length=10)
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	private $id;
 
-    /** 
-     * @ORM\Column(type="string", length=45, nullable=false)
-     */
-    private $name;
+	/**
+	 * @ORM\Column(type="string", length=45, nullable=false)
+	 */
+	private $name;
 
-    /** 
-     * @ORM\Column(type="string", length=155, nullable=false)
-     */
-    private $url_key;
+	/**
+	 * @ORM\Column(type="string", length=155, nullable=false)
+	 */
+	private $url_key;
 
-    /** 
-     * @ORM\Column(type="text", nullable=true)
-     */
-    private $url;
+	/**
+	 * @ORM\Column(type="text", nullable=true)
+	 */
+	private $url;
 
 	/**
 	 * @ORM\Column(type="string", length=155, nullable=true)
@@ -61,19 +61,18 @@ class SocialNetwork extends CoreEntity
 	 */
 	private $code;
 
-    /** 
-     * @ORM\ManyToOne(targetEntity="BiberLtd\Bundle\SiteManagementBundle\Entity\Site")
-     * @ORM\JoinColumn(name="site", referencedColumnName="id")
-     */
-    private $site;
+	/**
+	 * @ORM\ManyToOne(targetEntity="BiberLtd\Core\Bundles\SiteManagementBundle\Entity\Site")
+	 * @ORM\JoinColumn(name="site", referencedColumnName="id")
+	 */
+	private $site;
     /******************************************************************
      * PUBLIC SET AND GET FUNCTIONS                                   *
      ******************************************************************/
 
     /**
      * @name            getId()
-     *  				Gets $id property.
-     * .
+	 *
      * @author          Murat Ünal
      * @since			1.0.0
      * @version         1.0.0
@@ -85,10 +84,8 @@ class SocialNetwork extends CoreEntity
     }
 
     /**
-     * @name                  setName ()
-     *                                Sets the name property.
-     *                                Updates the data only if stored value and value to be set are different.
-     *
+     * @name            setName ()
+	 *
      * @author          Can Berkol
      *
      * @since           1.0.0
@@ -110,8 +107,7 @@ class SocialNetwork extends CoreEntity
 
     /**
      * @name            getName ()
-     *                          Returns the value of name property.
-     *
+	 *
      * @author          Can Berkol
      *
      * @since           1.0.0
@@ -124,10 +120,8 @@ class SocialNetwork extends CoreEntity
     }
 
     /**
-     * @name                  setSite ()
-     *                                Sets the site property.
-     *                                Updates the data only if stored value and value to be set are different.
-     *
+     * @name            setSite ()
+	 *
      * @author          Can Berkol
      *
      * @since           1.0.0
@@ -149,8 +143,7 @@ class SocialNetwork extends CoreEntity
 
     /**
      * @name            getSite ()
-     *                          Returns the value of site property.
-     *
+	 *
      * @author          Can Berkol
      *
      * @since           1.0.0
@@ -163,10 +156,8 @@ class SocialNetwork extends CoreEntity
     }
 
     /**
-     * @name                  setUrl ()
-     *                               Sets the url property.
-     *                               Updates the data only if stored value and value to be set are different.
-     *
+     * @name            setUrl ()
+	 *
      * @author          Can Berkol
      *
      * @since           1.0.0
@@ -202,10 +193,8 @@ class SocialNetwork extends CoreEntity
     }
 
     /**
-     * @name                  setUrlKey ()
-     *                                  Sets the url_key property.
-     *                                  Updates the data only if stored value and value to be set are different.
-     *
+     * @name            setUrlKey ()
+	 *
      * @author          Can Berkol
      *
      * @since           1.0.0
@@ -227,8 +216,7 @@ class SocialNetwork extends CoreEntity
 
     /**
      * @name            getUrlKey ()
-     *                            Returns the value of url_key property.
-     *
+	 *
      * @author          Can Berkol
      *
      * @since           1.0.0
@@ -254,7 +242,7 @@ class SocialNetwork extends CoreEntity
 	}
 
 	/**
-	 * @name              setCode ()
+	 * @name        setCode ()
 	 *
 	 * @author      Can Berkol
 	 *
@@ -289,7 +277,7 @@ class SocialNetwork extends CoreEntity
 	}
 
 	/**
-	 * @name              setIcon ()
+	 * @name         setIcon ()
 	 *
 	 * @author      Can Berkol
 	 *
@@ -311,6 +299,12 @@ class SocialNetwork extends CoreEntity
 }
 /**
  * Change Log:
+ * **************************************
+ * v1.0.1					   26.04.2015
+ * Can Berkol
+ * **************************************
+ * CR :: ORM updates.
+ *
  * **************************************
  * v1.0.1					   26.04.2015
  * TW #3569382
