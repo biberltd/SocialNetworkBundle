@@ -62,7 +62,7 @@ class SocialNetwork extends CoreEntity
 	private $code;
 
 	/**
-	 * @ORM\ManyToOne(targetEntity="BiberLtd\Core\Bundles\SiteManagementBundle\Entity\Site")
+	 * @ORM\ManyToOne(targetEntity="BiberLtd\Bundle\SiteManagementBundle\Entity\Site")
 	 * @ORM\JoinColumn(name="site", referencedColumnName="id")
 	 */
 	private $site;
